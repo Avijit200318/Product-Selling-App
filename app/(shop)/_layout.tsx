@@ -15,7 +15,8 @@ const TabsLayout = () => {
                 tabBarStyle: {
                     borderTopLeftRadius: 20,
                     borderTopRightRadius: 20,
-                    paddingTop: 10
+                    paddingTop: 10,
+                    height: 115
                 }
             }}>
                 <Tabs.Screen
