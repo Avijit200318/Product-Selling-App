@@ -1,7 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons"
 import { Tabs } from "expo-router"
 import { SafeAreaView } from "react-native-safe-area-context"
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 const TabsLayout = () => {
@@ -10,13 +9,13 @@ const TabsLayout = () => {
             <Tabs screenOptions={{
                 tabBarActiveTintColor: "#1BC464",
                 tabBarInactiveTintColor: "gray",
-                tabBarLabelStyle: {fontSize: 14},
+                tabBarLabelStyle: {fontSize: 13},
 
                 tabBarStyle: {
                     borderTopLeftRadius: 20,
                     borderTopRightRadius: 20,
-                    paddingTop: 10,
-                    height: 115
+                    paddingTop: 6,
+                    height: 110
                 }
             }}>
                 <Tabs.Screen
@@ -24,7 +23,7 @@ const TabsLayout = () => {
                     options={{
                         title: "Shop",
                         headerShown: false,
-                        tabBarIcon: ({color}) => <FontAwesome name="shopping-cart" size={24} color={color} />
+                        tabBarIcon: ({color}) => <FontAwesome6 name="shop" size={24} color={color} />
                     }}
                 />
                 <Tabs.Screen
@@ -32,7 +31,7 @@ const TabsLayout = () => {
                     options={{
                         title: "orders",
                         headerShown: false,
-                        tabBarIcon: ({color}) => <FontAwesome6 name="box" size={24} color={color} />
+                        tabBarIcon: ({color}) => <FontAwesome6 name="box" size={23} color={color} />
                     }}
                 />
             </Tabs>
