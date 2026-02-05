@@ -12,7 +12,7 @@ const ProductCard = ({ product }: { product: Product }) => {
                 </View>
                 <View className='px-3 py-2 items-start gap-1'>
                     <Text className='text-[#888]'>{product.title}</Text>
-                    <Text className='font-semibold'>${product.price}</Text>
+                    <Text className='font-semibold'>₹{product.price}</Text>
                 </View>
             </Pressable>
         </Link>

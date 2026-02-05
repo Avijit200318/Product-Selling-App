@@ -20,7 +20,7 @@ const ListHeader = () => {
                             {({ pressed }) => (
                                 <View className=''>
                                     <FontAwesome name='shopping-cart' size={25} color={'gray'} className='' />
-                                    <View className='absolute bg-[#1BC464] w-4 h-4 rounded-full justify-center items-center -top-2 -right-2'>
+                                    <View className='absolute bg-[#1BC464] w-4 h-4 rounded-full justify-center items-center -top-1.5 -right-2'>
                                         <Text className='text-white font-semibold text-sm'>1</Text>
                                     </View>
                                 </View>
