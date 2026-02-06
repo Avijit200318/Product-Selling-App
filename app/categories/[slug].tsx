@@ -13,7 +13,6 @@ const Category = () => {
   if(!category) return <Redirect href={'/+not-found' as Href} />
 
   const products = PRODUCTS.filter((product) => product.category.slug === slug)
-  console.log(products)
 
   return (
     <View className='flex-1 bg-[#fff] p-4'>

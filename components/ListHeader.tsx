@@ -3,8 +3,11 @@ import React from 'react'
 import { Link } from 'expo-router'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import { CATEGORIES } from '@/assets/categories'
+import { useCartStore } from '@/store/cartStore'
 
 const ListHeader = () => {
+    const {getTotalItems} = useCartStore();
+
     return (
         <View className='gap-4'>
             <View className='flex-row justify-between items-center'>
@@ -21,7 +24,7 @@ const ListHeader = () => {
                                 <View className=''>
                                     <FontAwesome name='shopping-cart' size={25} color={'gray'} className='' />
                                     <View className='absolute bg-[#1BC464] w-4 h-4 rounded-full justify-center items-center -top-1.5 -right-2'>
-                                        <Text className='text-white font-semibold text-sm'>1</Text>
+                                        <Text className='text-white font-bold text-xs'>{getTotalItems()}</Text>
                                     </View>
                                 </View>
                             )}
