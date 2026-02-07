@@ -16,6 +16,12 @@ const ProductLayout = () => {
                     )
                 }}
             />
+            <Stack.Screen
+                name="[slug]"
+                options={{
+                    headerShown: true,
+                }}
+            />
         </Stack>
     )
 }
