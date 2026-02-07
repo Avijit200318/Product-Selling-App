@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import "./global.css";
 import Toast, { BaseToast, ErrorToast, InfoToast, SuccessToast} from 'react-native-toast-message';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function RootLayout() {
   
@@ -10,11 +11,11 @@ export default function RootLayout() {
       <SuccessToast 
         {...props}
         style={{
-          width: '70%',
+          width: '50%',
           borderLeftColor: "#32CD32"
         }}
         text1Style={{
-          fontSize: 15
+          fontSize: 14
         }}
       />
     ),
@@ -26,14 +27,14 @@ export default function RootLayout() {
           borderLeftColor: "#1877F2"
         }}
         text1Style={{
-          fontSize: 15
+          fontSize: 14
         }}
       />
     )
   }
 
   return (
-    <>
+    <SafeAreaView edges={["top"]} className="flex-1">
       <Stack>
         <Stack.Screen name="(shop)"
           options={{ headerShown: false, title: "Shop" }}
@@ -51,6 +52,6 @@ export default function RootLayout() {
         <Stack.Screen name="cart" options={{ presentation: "modal", title: "Shopping Cart" }} />
       </Stack>
       <Toast config={toastConfig} />
-    </>
+    </SafeAreaView>
   )
 }

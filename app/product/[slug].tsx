@@ -22,14 +22,15 @@ const ProductDetails = () => {
   const totalPrice = (product.price * quantity).toFixed(2);
 
   const increaseQantity = () => {
-    if(quantity < product.quantity){
+    if(quantity < product.maxQuantity){
       setQuantity((prev) => prev + 1);
       incrementItem(product.id);
     }else{
       Toast.show({
         type: 'info',
         text1: 'Cannot add more than maximum quantity',
-        position: 'top'
+        position: 'top',
+        autoHide: true
       })
     }
   }
@@ -77,7 +78,7 @@ const ProductDetails = () => {
           className='mb-4'
         />
 
-        <View className='flex-row items-center mb-8 px-2 gap-6'>
+        <View className='flex-row items-center px-2 gap-6'>
           <TouchableOpacity onPress={decreaseQuantity} disabled={quantity <= 1} className='w-8 h-8 bg-[#007bff] rounded-full items-center justify-center'>
             <Text className='text-white font-bold text-lg'>-</Text>
           </TouchableOpacity>

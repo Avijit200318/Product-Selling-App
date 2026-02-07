@@ -5,7 +5,6 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 const TabsLayout = () => {
     return (
-        <SafeAreaView edges={["top"]} className="flex-1">
             <Tabs screenOptions={{
                 tabBarActiveTintColor: "#1BC464",
                 tabBarInactiveTintColor: "gray",
@@ -15,7 +14,7 @@ const TabsLayout = () => {
                     borderTopLeftRadius: 20,
                     borderTopRightRadius: 20,
                     paddingTop: 6,
-                    height: 110
+                    height: 70
                 }
             }}>
                 <Tabs.Screen
@@ -35,7 +34,6 @@ const TabsLayout = () => {
                     }}
                 />
             </Tabs>
-        </SafeAreaView>
     )
 }
 
