@@ -1,7 +1,6 @@
-import { View, Text, Alert, Platform, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, Alert, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import { CartItemType, useCartStore } from '@/store/cartStore'
-import { StatusBar } from 'expo-status-bar';
 import CartItem from '@/components/CartItem';
 
 
@@ -22,8 +21,6 @@ const cart = () => {
 
   return (
     <View className='flex-1 bg-[#fff]'>
-      <StatusBar style={Platform.OS === "ios" ? 'light' : 'dark'} />
-
       <FlatList data={items}
         renderItem={({ item }) => (<CartItem item={item} onRemove={removeItem} onDecrement={decrementItem} onIncrement={incrementItem} />)}
         keyExtractor={(item) => item.id.toString()}

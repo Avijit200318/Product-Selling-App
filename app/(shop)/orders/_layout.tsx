@@ -5,7 +5,11 @@ const OrdersLayout = () => {
         <Stack>
             <Stack.Screen
                 name="index"
-                options={{headerShown: false, title: "Order index page"}}
+                options={{headerShown: true, title: "Orders", headerTitleAlign: "center"}}
+            />
+            <Stack.Screen
+                name="[slug]"
+                options={{headerShown: true, title: "Orderdetails"}}
             />
         </Stack>
     )
