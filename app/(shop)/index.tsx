@@ -1,4 +1,4 @@
-import { FlatList, Text, View } from "react-native";
+import { FlatList, View } from "react-native";
 import { PRODUCTS } from "@/assets/products";
 import ProductCard from "@/components/ProductCard";
 import ListHeader from "@/components/ListHeader";
