@@ -1,9 +1,17 @@
 import Ionicons from "@expo/vector-icons/Ionicons"
-import { Tabs } from "expo-router"
+import { Redirect, Tabs } from "expo-router"
 import { SafeAreaView } from "react-native-safe-area-context"
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { useAuth } from "@/providers/auth-provider";
+import { ActivityIndicator } from "react-native";
 
 const TabsLayout = () => {
+    // check
+    const {session, mounting} = useAuth();
+
+    if(mounting) return <ActivityIndicator />
+    if(!session) return <Redirect href={'/auth'} />
+
     return (
             <Tabs screenOptions={{
                 tabBarActiveTintColor: "#1BC464",

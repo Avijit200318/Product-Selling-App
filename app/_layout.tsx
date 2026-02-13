@@ -1,16 +1,17 @@
 import { Stack } from "expo-router";
 import "./global.css";
-import Toast, { BaseToast, ErrorToast, InfoToast, SuccessToast} from 'react-native-toast-message';
+import Toast, { BaseToast, ErrorToast, InfoToast, SuccessToast } from 'react-native-toast-message';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { Platform } from "react-native";
+import { AuthPorvider } from "@/providers/auth-provider";
 
 export default function RootLayout() {
-  
+
   // custom toast message
   const toastConfig = {
     success: (props: any) => (
-      <SuccessToast 
+      <SuccessToast
         {...props}
         style={{
           width: '50%',
@@ -38,23 +39,25 @@ export default function RootLayout() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1">
       <StatusBar style={Platform.OS === "ios" ? 'light' : 'dark'} />
-      <Stack>
-        <Stack.Screen name="(shop)"
-          options={{ headerShown: false, title: "Shop" }}
-        />
-        <Stack.Screen name="categories"
-          options={{ headerShown: false, title: "Categories" }}
-        />
-        <Stack.Screen
-          name='product'
-          options={{ headerShown: false, title: 'Product' }}
-        />
-        <Stack.Screen name="auth"
-          options={{ headerShown: false, title: "Auth" }}
-        />
-        <Stack.Screen name="cart" options={{ presentation: "modal", title: "Shopping Cart" }} />
-      </Stack>
-      <Toast config={toastConfig} />
+      <AuthPorvider>
+        <Stack>
+          <Stack.Screen name="(shop)"
+            options={{ headerShown: false, title: "Shop" }}
+          />
+          <Stack.Screen name="categories"
+            options={{ headerShown: false, title: "Categories" }}
+          />
+          <Stack.Screen
+            name='product'
+            options={{ headerShown: false, title: 'Product' }}
+          />
+          <Stack.Screen name="auth"
+            options={{ headerShown: false, title: "Auth" }}
+          />
+          <Stack.Screen name="cart" options={{ presentation: "modal", title: "Shopping Cart" }} />
+        </Stack>
+        <Toast config={toastConfig} />
+      </AuthPorvider>
     </SafeAreaView>
   )
 }
